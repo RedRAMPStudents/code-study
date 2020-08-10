@@ -22,7 +22,7 @@ char password[] = "mtzjsAYXT4";  // Replace PASSWORD with your router password
 // MQTTServer to use
 char server[] = "io.adafruit.com";
 char Adafruit_user_name[] = "seags"; // Replace USER with your Adafruit User Name
-char Adafruit_IO_KEY[] = "aio_sELi06U8g3lHo1AqOVgiM8S78jkx";  //Replace IO_KEY with the Adafruit IO_KEY   
+char Adafruit_IO_KEY[] = "insert IO key";  //Replace IO_KEY with the Adafruit IO_KEY   
 String Adafruit_Feed_Name = "Study_Buzzer"; // Replace button_1 with Adafruit feed name id different
 
 
