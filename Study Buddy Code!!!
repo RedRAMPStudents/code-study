@@ -306,6 +306,9 @@ void StickFlicker (){
          JoystickPosition = 4;
       }
    }
+   digitalWrite(BLUE_LED, LOW);
+      digitalWrite(GREEN_LED, LOW);
+      digitalWrite(RED_LED, LOW);
 }
 void sendRequest(){
   if(trigger == 0){
