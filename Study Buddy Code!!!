@@ -36,8 +36,8 @@ char ssid[] = "Mayfair"; // Replaced SSID with your WiFi router Name
 char password[] = "FarBar642677";  // Replace PASSWORD with your router password
 // MQTTServer to use
 char server[] = "io.adafruit.com";
-char Adafruit_user_name[] = "seags"; // Replace xxx with your Adafruit User Name
-char Adafruit_IO_KEY[] = "aio_crfy444qe6j8naxYNPJE7lBIhySJ";  //Replace IO_KEY with the Adafruit IO_KEY
+char Adafruit_user_name[] = "Neut"; // Replace xxx with your Adafruit User Name
+char Adafruit_IO_KEY[] = "aio_GvoY40ewjek8xyHWcLZfMQXhPgUs";  //Replace IO_KEY with the Adafruit IO_KEY
 String Adafruit_Feed_Name = "Study_Buddy"; // Repleace Feed_Name with Adafruit feed name
 char JoystickString[16];// string that we are creating
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -195,7 +195,7 @@ void loop() {
  * The buzzer goes off after 20 minutes the first time (20 seconds in this prototype) and then every 30 minutes subsequently. The formula "g-c*30==20"
  * helps ensure it will go off at these times. Shoutout to Mrs. Fang for the Calc 2 series lesson
  */
-  if(g-c*1500==1200){
+  if(g-c*30==20){
     while(buttonState == HIGH){
   
       buttonState = digitalRead(button);
@@ -213,7 +213,7 @@ void loop() {
 /*
  * The rest buzzer goes off for the first time at 25 minuts, and every 25 minutes after; this formula helps ensure that
  */
-  if(g%1500==0){
+  if(g%30==0){
    while(buttonState == HIGH){
   
     buttonState = digitalRead(button);
@@ -273,6 +273,36 @@ void loop() {
   Serial.print("\t");
   Serial.println(c);
   delay(100);
+
+   printWifiStatus();
+  if (!client.connected()) {
+    Serial.println("Disconnected. Reconnecting....");
+    //Line below is the master code
+    //if(!client.connect("energiaClient", "[ADAFRUIT_USERNAME]", "[ADAFRUIT_IO_KEY]")) {
+    if(!client.connect("energiaClient", Adafruit_user_name, Adafruit_IO_KEY)) {
+      Serial.println("Connection failed");
+    } else {
+      Serial.println("Connection success");
+      //dab ... line below is the master code
+      //if(client.subscribe("[ADAFRUIT_USERNAME]/feeds/inTopic")) {
+      // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
+      if(client.subscribe("Neut/feeds/study-time")) {
+        Serial.println("Subscription successful");
+      }
+      }
+    }
+    // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
+    sprintf(JoystickString, "%4.2f", m);//creating joystick string formatted by %d, creating a string value by the Joystick Position
+    if(client.publish("Neut/feeds/study-time", JoystickString)) {
+      Serial.println("Publish success");
+      } else {
+      Serial.println("Publish failed");
+    }
+    client.disconnect();
+    delay(1000);
+
+
+    
   int d=4;
   while(d==4){
   
@@ -301,9 +331,6 @@ void StickFlicker (){
       }
       else if (Yaxis>998){
         JoystickPosition = 3;
-      }
-        else if (Yaxis<102){
-         JoystickPosition = 4;
       }
    }
    digitalWrite(BLUE_LED, LOW);
@@ -343,14 +370,14 @@ String Adafruit_trigger(String KEY, String EVENT) {
       //dab ... line below is the master code
       //if(client.subscribe("[ADAFRUIT_USERNAME]/feeds/inTopic")) {
       // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
-      if(client.subscribe("seags/feeds/aio_crfy444qe6j8naxYNPJE7lBIhySJ")) {
+      if(client.subscribe("Neut/feeds/study-typein")) {
         Serial.println("Subscription successful");
       }
       }
     }
     // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
     sprintf(JoystickString, "%d", JoystickPosition);//creating joystick string formatted by %d, creating a string value by the Joystick Position
-    if(client.publish("seags/feeds/aio_crfy444qe6j8naxYNPJE7lBIhySJ", JoystickString)) {
+    if(client.publish("Neut/feeds/study-typein", JoystickString)) {
       Serial.println("Publish success");
       } else {
       Serial.println("Publish failed");
