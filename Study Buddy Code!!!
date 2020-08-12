@@ -31,13 +31,13 @@ int Yceil = 1000;
 int TestTest=0;
 
 // your network name also called SSID
-char ssid[] = "Mayfair"; // Replaced SSID with your WiFi router Name
+char ssid[] = "[WIFI NAME]"; // Replaced SSID with your WiFi router Name
 // your network password
-char password[] = "FarBar642677";  // Replace PASSWORD with your router password
+char password[] = "[WIFI PASSWORD]";  // Replace PASSWORD with your router password
 // MQTTServer to use
 char server[] = "io.adafruit.com";
-char Adafruit_user_name[] = "Neut"; // Replace xxx with your Adafruit User Name
-char Adafruit_IO_KEY[] = "aio_GvoY40ewjek8xyHWcLZfMQXhPgUs";  //Replace IO_KEY with the Adafruit IO_KEY
+char Adafruit_user_name[] = "[USER NAME]"; // Replace xxx with your Adafruit User Name
+char Adafruit_IO_KEY[] = "[ADAFRUIT KEY]";  //Replace IO_KEY with the Adafruit IO_KEY
 String Adafruit_Feed_Name = "Study_Buddy"; // Repleace Feed_Name with Adafruit feed name
 char JoystickString[16];// string that we are creating
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -286,14 +286,14 @@ void loop() {
       //dab ... line below is the master code
       //if(client.subscribe("[ADAFRUIT_USERNAME]/feeds/inTopic")) {
       // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
-      if(client.subscribe("Neut/feeds/study-time")) {
+      if(client.subscribe("[FEED URL]")) {
         Serial.println("Subscription successful");
       }
       }
     }
     // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
     sprintf(JoystickString, "%4.2f", m);//creating joystick string formatted by %d, creating a string value by the Joystick Position
-    if(client.publish("Neut/feeds/study-time", JoystickString)) {
+    if(client.publish("[FEED URL]", JoystickString)) {
       Serial.println("Publish success");
       } else {
       Serial.println("Publish failed");
@@ -370,14 +370,14 @@ String Adafruit_trigger(String KEY, String EVENT) {
       //dab ... line below is the master code
       //if(client.subscribe("[ADAFRUIT_USERNAME]/feeds/inTopic")) {
       // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
-      if(client.subscribe("Neut/feeds/study-typein")) {
+      if(client.subscribe("[FEED URL]")) {
         Serial.println("Subscription successful");
       }
       }
     }
     // In the line below ... replace [ADAFRUIT_USERNAME] with the actual name.  Don't include the [].  Change button_1 if you are using another topic
     sprintf(JoystickString, "%d", JoystickPosition);//creating joystick string formatted by %d, creating a string value by the Joystick Position
-    if(client.publish("Neut/feeds/study-typein", JoystickString)) {
+    if(client.publish("[FEED URL]", JoystickString)) {
       Serial.println("Publish success");
       } else {
       Serial.println("Publish failed");
