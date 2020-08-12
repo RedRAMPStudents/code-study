@@ -6,7 +6,7 @@ and digilent arduino boards.
 
 The developers are: Sarah Eagen, Julia Measmer, Nathan Uhunsere, Rishabh Dhir, and Victoria Nguyen. 
 
-# Intructions
+# Instructions
 ## Create Adafruit Feeds for Study Buddy
 1. Take note of **your** [Adafruit IO key](https://learn.adafruit.com/mqtt-adafruit-io-and-you/getting-started-on-adafruit-io)
 2. Create a new feed that will record your study time data nd take note of the name of your feed
@@ -60,3 +60,11 @@ Assuming all other steps have been completed correctly
 6. If you need to pause, press the joystick button, then press it again to unpause
 7. To end your session, press button 2
 8. To reset and start a new study session, press the button on the launch pad
+
+# Materiels Used
+## Boards 
+* [MSP432](https://www.ti.com/microcontrollers/simplelink-mcus/wired-mcus/overview/overview.html) LaunchPad development kit (MSP-EXP432P401R)
+* TI's SimpleLink [Wi-Fi Family CC3100 BoosterPack](https://www.ti.com/tool/CC3100BOOST?DCMP=cc3100cc3200&HQS=cc3100boost)
+* Educational BoosterPakc [MKII](https://www.ti.com/tool/BOOSTXL-EDUMKII?DCMP=ep-mcu-msp-en&HQS=boostxl-edumkii) (Boostxl-edumkII)
+## Programs + Apps
+* 
