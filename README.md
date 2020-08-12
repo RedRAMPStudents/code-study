@@ -66,7 +66,8 @@ Assuming all other steps have been completed correctly
 * [MSP432](https://www.ti.com/microcontrollers/simplelink-mcus/wired-mcus/overview/overview.html) LaunchPad development kit (MSP-EXP432P401R)
 * TI's SimpleLink [Wi-Fi Family CC3100 BoosterPack](https://www.ti.com/tool/CC3100BOOST?DCMP=cc3100cc3200&HQS=cc3100boost)
 * Educational BoosterPakc [MKII](https://www.ti.com/tool/BOOSTXL-EDUMKII?DCMP=ep-mcu-msp-en&HQS=boostxl-edumkii) (Boostxl-edumkII)
-## Programs + Apps
+
+## Programs and Applications
 * [Energia](https://energia.nu/)
 * [Adafruit](https://www.adafruit.com/0)
 * [Zapier](https://zapier.com/)
