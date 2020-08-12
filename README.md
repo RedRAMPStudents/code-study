@@ -15,7 +15,7 @@ The developers are: Sarah Eagen, Julia Measmer, Nathan Uhunsere, Rishabh Dhir, a
     * Create a trigger - "If(Feed from step(3) is equal to "1" then set (Feed from (3i)) to "Test Prep"
     * Create another trigger - "If (Feed from step(3)) is equal to "1" then set (Feed from step(3)) then set (Feed from (3i)) to "Group Work"
     * Create another trigger - "If (Feed from step(3)) is equal to "3" then set (Feed from (3i)) to "Homework"
-4. Share your feed from step(2) and (i) with the username of whoever is hosting the shared Adafruit feeds
+4. Share your feed from step(2) and (i) with the username (seags in our case) of whoever is hosting the shared Adafruit feeds 
 
 ## To Set up Energia Code
 1. Download/copy Study Buddy Code!!! into Energia
@@ -33,4 +33,20 @@ The developers are: Sarah Eagen, Julia Measmer, Nathan Uhunsere, Rishabh Dhir, a
     3. Repeat for line 380
     
 ## To Set up Zapier Bots: 
-    
+Firstly create a new Zap, then follow the prompts:
+1. When this happens...
+    1. Choose /Search for Adafruit IO
+    * Choose Trigger -> Get Feed Data
+    2. Choose your Adafruit account and insert your Adafruit IO key
+    3. Select your feed from step(i)
+    4. Select feed data A
+2. Do this...
+    1. Choose /Search for Discord app
+    * Choose Action -> send a channel message
+    2. Choose the account that you would like to use (in our case RedHat RAMP account) and log into your Discord
+    3. Customize channel message to
+    * Bot-channel (whatever channel that the bot should be in)
+    * Message text "(your name) is doing" then select/insert data from Adafruit (1.Value)
+    * Name your not "(your name)'s bot"
+    2. Test and turn on your zap!
+
