@@ -67,4 +67,7 @@ Assuming all other steps have been completed correctly
 * TI's SimpleLink [Wi-Fi Family CC3100 BoosterPack](https://www.ti.com/tool/CC3100BOOST?DCMP=cc3100cc3200&HQS=cc3100boost)
 * Educational BoosterPakc [MKII](https://www.ti.com/tool/BOOSTXL-EDUMKII?DCMP=ep-mcu-msp-en&HQS=boostxl-edumkii) (Boostxl-edumkII)
 ## Programs + Apps
-* 
+* [Energia](https://energia.nu/)
+* [Adafruit](https://www.adafruit.com/0
+* [Zapier](https://zapier.com/)
+* [Discord](https://discord.com/new)
