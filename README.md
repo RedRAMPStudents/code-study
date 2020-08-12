@@ -68,6 +68,6 @@ Assuming all other steps have been completed correctly
 * Educational BoosterPakc [MKII](https://www.ti.com/tool/BOOSTXL-EDUMKII?DCMP=ep-mcu-msp-en&HQS=boostxl-edumkii) (Boostxl-edumkII)
 ## Programs + Apps
 * [Energia](https://energia.nu/)
-* [Adafruit](https://www.adafruit.com/0
+* [Adafruit](https://www.adafruit.com/0)
 * [Zapier](https://zapier.com/)
 * [Discord](https://discord.com/new)
